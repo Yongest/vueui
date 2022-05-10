@@ -20,9 +20,8 @@
       }
     },
     created(){
-     
-      
 
+     
     },
     methods:{
         handleChange(val){

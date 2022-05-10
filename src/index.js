@@ -1,4 +1,4 @@
-import yInput from '../components/y-input/index.js';
+import yInput from './components/y-input/index.js';
 
 const components = [
     yInput
@@ -13,7 +13,7 @@ const install = function(Vue, opts = {}) {
   };
 
 export default{
-    version: '2.15.3',
+    version: '0.1.1',
     install,
     yInput
 }
