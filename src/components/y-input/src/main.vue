@@ -1,5 +1,5 @@
 <template>
-      <input type="text" @change="handleChange" :value="value" />
+      <input type="text" @change="handleChange" :value="value" :class="setClass" />
 </template>
 
 <script>
@@ -11,19 +11,21 @@
         type: String,
         default: ''
       },
-      
+     
+    
     },
-    data(){
-      return {
-        
-        
-      }
-    },
+ 
+  
     created(){
-
+      
      
     },
     methods:{
+       setClass(){
+          return {
+            [this.$vnode.data.staticClass]:true
+          }
+       },
         handleChange(val){
           this.$emit('input',val.target.value)
         },
@@ -38,11 +40,19 @@
 
 <style lang="less" scoped>
   input{
-    height: 26px;
+    overflow: visible;
+    transition: all .3s;
+    position: relative;
+    height: 32px;
     border-radius: 3px;
     border: 1px solid #d9d9d9;
     padding: 4px 11px;
+    display: inline-block;
+    width: 100%;
   }
+  input:placeholder-shown {
+    text-overflow: ellipsis;
+}
   input:focus{
     border-color: #40a9ff;
     border-right-width: 1px !important;
@@ -52,5 +62,8 @@
   input:hover{
     border-color: #40a9ff;
     border-right-width: 1px !important;
+  }
+  .query-group-cust{
+    width: calc(50% - 10px);
   }
 </style>
