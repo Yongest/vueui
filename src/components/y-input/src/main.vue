@@ -49,6 +49,7 @@
     padding: 4px 11px;
     display: inline-block;
     width: 100%;
+    box-sizing: border-box;
   }
   input:placeholder-shown {
     text-overflow: ellipsis;

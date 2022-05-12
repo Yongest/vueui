@@ -1,7 +1,9 @@
 import yInput from './components/y-input/index.js';
-
+import yBarcodeInput from './components/y-barcode-input/index.js';
+  
 const components = [
-    yInput
+    yInput,
+    yBarcodeInput
 ]
 
 const install = function(Vue, opts = {}) {
@@ -13,7 +15,8 @@ const install = function(Vue, opts = {}) {
   };
 
 export default{
-    version: '0.1.3',
+    version: '0.1.4',
     install,
-    yInput
+    yInput,
+    yBarcodeInput
 }

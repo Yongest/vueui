@@ -1,20 +1,26 @@
 <template>
   <div id="app">
-    <y-input v-model="aaa" placeholder="请输入..." />
+    <p>y-input</p>
+    <y-input v-model="a" placeholder="请输入..." />
+    <p>y-barcode-input</p>
+    <y-barcode-input v-model="b" placeholder="请输入..." />
   </div>
 </template>
 
 <script>
 import yInput from './components/y-input/src/main.vue'
+import yBarcodeInput from './components/y-barcode-input/src/main.vue'
 
 export default {
   name: 'App',
   components: {
-    yInput
+    yInput,
+    yBarcodeInput
   },
   data(){
     return {
-      aaa:'xxx'
+      a:'a',
+      b:'',
     }
   }
 }
