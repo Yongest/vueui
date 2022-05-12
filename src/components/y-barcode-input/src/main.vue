@@ -1,6 +1,6 @@
 <template>
      <div>
-       <input :id="`id`+radomId" type="text" @change="handleChange" ref="input" @keydown="handleKeydown" :value="value" :class="setClass" />
+       <input  @change="handleChange" placeholder="请输入条码！" ref="input" @keydown="handleKeydown" :value="value" :class="setClass" />
         <p class="tips" v-show="showTips">请切换至英文输入法!</p>
       </div>
      
@@ -22,17 +22,18 @@
       return {
         Chinese:false,
         radomId:'',
-        showTips:false
+        showTips:false,
+        
       }
     },
   
     created(){
-      window.that = this
+      
      
     },
     methods:{
       handleKeydown(e){
-       
+      
         if(e.key==='Process'){  // 表示是中文输入法
              
              this.Chinese = true
@@ -45,7 +46,7 @@
           }
        },
         handleChange(e){
-              this.radomId = Math.random()
+              
               if(this.Chinese){
                   this.showTips = true
                   this.$emit('input','')
@@ -55,7 +56,6 @@
                 this.showTips = false
               }
               this.Chinese = false
-          
               
         },
        
@@ -79,6 +79,7 @@
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
+    
   }
   input:placeholder-shown {
     text-overflow: ellipsis;
@@ -101,6 +102,8 @@
     font-size: 12px;
     margin:0;
     padding-left: 10px;
-
+    line-height: 12px;
+    position: relative;
+    margin-top: -3px;
   }
 </style>
