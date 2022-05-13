@@ -4,6 +4,7 @@
     <y-input v-model="a" placeholder="请输入..." />
     <p>y-barcode-input</p>
     <y-barcode-input v-model="b" placeholder="请输入..." />
+    {{b}}
   </div>
 </template>
 
