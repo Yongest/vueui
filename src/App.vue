@@ -4,7 +4,7 @@
     <y-input v-model="a" placeholder="请输入..." />
     <p>y-barcode-input</p>
     <y-barcode-input v-model="b" placeholder="请输入..." />
-    {{b}}
+    <!-- <button style="padding:20px 100px">{{b}}</button> -->
   </div>
 </template>
 
@@ -18,11 +18,17 @@ export default {
     yInput,
     yBarcodeInput
   },
+  created(){
+    
+  },
   data(){
     return {
       a:'a',
       b:'',
     }
+  },
+  methods:{
+   
   }
 }
 </script>
