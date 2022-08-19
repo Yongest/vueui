@@ -227,6 +227,11 @@
 </script>
 
 <style lang="less" scoped>
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
 .hide{
   visibility: hidden
 }
@@ -318,20 +323,25 @@
     margin-top: -3px;
   }
   img{
-    width: 18px;
+    width: 32px;
     position: absolute;
     right: 5px;
     top: 0px;
     padding:7px;
     cursor: pointer;
     z-index: 20;
+    box-sizing: border-box;
+
   }
   .txtbox{
     position: absolute;
     top:0;
-    padding: 4px 8px;
+    padding: 0px 8px;
     display: block;
-    width: calc(100% - 60px);
+    width: calc(100% - 30px);
     z-index: 10;
+    height: 100%;
+    cursor: text;
+    line-height: 32px;
   }
 </style>
