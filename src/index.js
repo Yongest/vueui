@@ -15,7 +15,7 @@ const install = function(Vue, opts = {}) {
   };
 
 export default{
-    version: '0.3',
+    version: '0.5.0',
     install,
     yInput,
     yBarcodeInput

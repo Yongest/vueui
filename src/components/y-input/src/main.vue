@@ -1,5 +1,5 @@
 <template>
-      <input type="text" @change="handleChange" :value="value" :class="setClass" />
+      <input type="text" :disabled="disabled" @change="handleChange" :value="value" :class="setClass" />
 </template>
 
 <script>
@@ -11,7 +11,10 @@
         type: String,
         default: ''
       },
-     
+      disabled: {
+        type: Boolean,
+        default: false
+      },
     
     },
  
@@ -39,6 +42,7 @@
 </script>
 
 <style lang="less" scoped>
+
   input{
     overflow: visible;
     transition: all .3s;

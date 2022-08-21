@@ -1,11 +1,9 @@
 <template>
  
-       <div class="box _box_"  @paste="onPaste">
-
+      <div class="box _box_" >
        <button 
         @keyup="onKeyup" 
         placeholder="请输入条码！"
-       @paste="onPaste"
         @blur="onBlur" 
         @focus="onFocus"
         @keydown="onKeydown"
@@ -13,7 +11,6 @@
         >
        </button>
        <div class="txtbox" 
-          @paste="onPaste"
           @mousedown="onMousedown" 
           @mouseup="onMouseup"
 
@@ -23,7 +20,8 @@
           <span style="color:#646464">{{!txt?'请输入条码！':''}}</span>
        </div>
        
-       <img v-show="txt" src="./delete.svg" alt="" @click="clearTxt">
+       <img v-show="txt && !disabled" src="./delete.svg" alt="" @click="clearTxt">
+       <div v-show="disabled" class="disabled"></div>
       <!-- <p class="copy">粘贴</p> -->
        <!-- <input  @change="handleChange" placeholder="请输入条码！"  ref="input" @compositionstart="compositionstart" @compositionend="compositionend" @keyup="handleKeydown" :value="value" :class="setClass" /> -->
        
@@ -43,7 +41,10 @@
         type: String,
         default: ''
       },
-     
+     disabled: {
+        type: Boolean,
+        default: false
+      },
     
     },
     data(){
@@ -231,6 +232,16 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
+}
+.disabled{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0,0,0,0.2);
+  cursor: not-allowed;
 }
 .hide{
   visibility: hidden

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <p>y-input</p>
-    <y-input v-model="a" placeholder="请输入..." />
+    <y-input  v-model="a" placeholder="请输入..." />
     <p>y-barcode-input</p>
-    <y-barcode-input v-model="b" placeholder="请输入..." />
+    <y-barcode-input :disabled="true" v-model="b" placeholder="请输入..." />
     <!-- <button style="padding:20px 100px">{{b}}</button> -->
   </div>
 </template>
